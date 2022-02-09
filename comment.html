@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commetn</title>
+</head>
+
+<body>
+    <h2>Add YOur comment. Please</h2>
+    <section>
+        <h4>Your commnets </h4>
+        <div id="commnet-container">
+            <p><span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio repellendus, veritatis
+                    doloremque hic id expedita cum excepturi nemo praesentium voluptas? Neque harum eligendi delectus
+                    veniam cum itaque necessitatibus aspernatur debitis.</span><span>Adipisci quia deserunt repudiandae
+                    dolorem a obcaecati labore, aspernatur ipsa esse ad eius veniam molestiae quam vitae excepturi
+                    provident aut nobis impedit nesciunt. Laboriosam ab repellat ducimus nesciunt accusamus
+                    iste!</span><span>Eveniet quidem sapiente nisi eligendi temporibus veritatis. Nesciunt doloremque
+                    dignissimos, ratione assumenda quia earum natus expedita molestias ex nemo quibusdam esse enim?
+                    Soluta nesciunt blanditiis quam repellat eveniet odio deserunt?</span></p>
+            <p><span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint optio laboriosam quas doloribus
+                    aliquam a officiis velit, quod ullam praesentium, minima est itaque tempore rerum tenetur! Quos,
+                    itaque. Minima, nulla!</span><span>Id sit quasi temporibus nemo cupiditate sint soluta commodi quis,
+                    sed deleniti consequuntur perferendis deserunt voluptate. Quo harum vel magni asperiores adipisci
+                    aperiam, iste officiis, voluptas reprehenderit quam, similique rem!</span><span>Nulla, iure minus
+                    incidunt dolor cumque numquam aliquid doloremque neque quo praesentium. Maiores soluta impedit quis
+                    vitae blanditiis minima quibusdam optio! Ut officia neque nostrum at voluptatem placeat tempora
+                    laborum.</span></p>
+        </div>
+        <div>
+            <textarea name="" id="new-comment" cols="60" rows="4">            </textarea>
+            <br>
+            <button id="submit-comment">Post</button>
+
+
+        </div>
+
+
+
+    </section>
+    <script>
+        // 1. add button enent handler
+        document.getElementById('submit-comment').addEventListener('click', function () {
+
+            //2. get user comment
+            const commentBox = document.getElementById('new-comment');
+            // ------const userComment = commentBox.value;
+
+            //3. creat commetn pragraph
+            const newComment = document.createElement('p');
+            newComment.innerText = commentBox.value;
+
+            // 4. addent the comment
+
+            const commnetContainer = document.getElementById('commnet-container');
+            commnetContainer.appendChild(newComment);
+
+            // 5. clean the comment box 
+            commentBox.value = '';
+
+        })
+
+    </script>
+
+
+
+</body>
+
+</html>
