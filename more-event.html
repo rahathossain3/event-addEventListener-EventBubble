@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More Events</title>
+</head>
+
+<body>
+    <h2>More Events</h2>
+    <section>
+        <h3 id="secret-info"> Vary vary Improtant Secret Information</h3>
+        <input id="delete-confirm" type="text" placeholder="Please type delete">
+        <button id="delete-btn" disabled>Delete</button>
+    </section>
+    <script>
+        //click-------
+        document.getElementById('delete-btn').addEventListener('click', function () {
+            document.getElementById('secret-info').style.display = 'none';      //CALL
+        })
+        //focus   ------------------------------  add eventer listener 
+        document.getElementById('delete-confirm').addEventListener('focus', function () {
+            document.body.style.backgroundColor = 'lightcoral';
+        })
+
+        // blur-----------
+        document.getElementById('delete-confirm').addEventListener('blur', function () {
+            document.body.style.backgroundColor = 'white';
+        })
+        /* //keydown---------              // keyboard a key press korle  next preas a kaj korbe
+         document.getElementById('delete-confirm').addEventListener('keydown', function () {
+                const deleteField = document.getElementById('delete-confirm');
+                console.log(deleteField.value);
+            })
+        //keypress----------            // keyboard a key press korle  next preas a kaj korbe
+           document.getElementById('delete-confirm').addEventListener('keypress', function () {
+                const deleteField = document.getElementById('delete-confirm');
+                console.log(deleteField.value);
+            }) */
+        //keyup ------------            //safe way // keyboard a key press korle por sathe sathe e kaj korbe
+        document.getElementById('delete-confirm').addEventListener('keyup', function (event) {      //func name event
+            const deleteBtn = document.getElementById('delete-btn');
+            if (event.target.value == 'delete') {
+                deleteBtn.removeAttribute('disabled');                  //removeAttribute
+            }
+            else {
+                deleteBtn.setAttribute('disabled', true);               //setAttribure
+            }
+
+            // const deleteField = document.getElementById('delete-confirm');
+            // console.log(deleteField.value);
+        })
+        //change ------------            //safe way // input fiel a kno change hole ta show korbe
+        document.getElementById('delete-confirm').addEventListener('change', function () {
+            const deleteField = document.getElementById('delete-confirm');
+            console.log(deleteField.value);
+        })
+
+
+
+    </script>
+
+</body>
+
+</html>
