@@ -18,21 +18,39 @@
         <li class="item">Ducimus, inventore.</li>
         <li class="item">Saepe, vero!</li>
     </ul>
+    <button id="add-item">Add item</button>
     <script>
         const items = document.getElementsByClassName('item');
-        for (const item of items) {
-            // 1st way -----------
-            /*   item.addEventListener('click', function () {
-                  document.getElementById('item-container').removeChild(item);      //easy way
-  
-                  // console.log('remove this item')
-              }) */
+        // for (const item of items) {
+        //     // 1st way -----------
+        //     /*   item.addEventListener('click', function () {
+        //           document.getElementById('item-container').removeChild(item);      //easy way
 
-            // 2nd way ----------------
-            item.addEventListener('click', function (event) {           //event  & e same value
-                event.target.parentNode.removeChild(event.target);
-            })
-        }
+        //           // console.log('remove this item')
+        //       }) */
+
+        //     // 2nd way ----------------
+        //     item.addEventListener('click', function (event) {           //event  & e same value
+        //         event.target.parentNode.removeChild(event.target);
+        //     })
+        // }
+
+
+        //add item---------
+        document.getElementById('add-item').addEventListener('click', function () {
+            console.log('okk')
+            const li = document.createElement('li');
+            li.innerText = 'Barand new';
+            const parent = document.getElementById('item-container');
+            parent.appendChild(li);
+        })
+
+        //remove item ----- set event parentnode
+        document.getElementById('item-container').addEventListener('click', function (event) {
+            event.target.parentNode.removeChild(event.target);
+        })
+
+
 
     </script>
 
