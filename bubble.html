@@ -5,11 +5,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bubble</title>
+    <title>Event Bubble </title>
 </head>
 
 <body>
+    <h2>Evetn Babbul</h2>
+    <h4>add more Babbul event</h4>
+    <ul id="ui-1">
+        <li>Lorem, ipsum.</li>
+        <li id="second-li">Reiciendis, dolores.</li>
+        <li>Dolores, quaerat.</li>
+        <li>Corrupti, nostrum.</li>
+    </ul>
 
+    <script>
+        // click 
+        document.getElementById('second-li').addEventListener('click', function (event) {
+
+            console.log('second1-li');
+            event.stopImmediatePropagation();
+            event.stopPropagation();
+        })
+        document.getElementById('second-li').addEventListener('click', function (event) {
+            console.log('second2-li');
+        })
+        document.getElementById('second-li').addEventListener('click', function (event) {
+            console.log('second3-li');
+        })
+        document.getElementById('ui-1').addEventListener('click', function (event) {
+            console.log('ui 1');
+        })
+
+
+
+    </script>
 
 </body>
 
